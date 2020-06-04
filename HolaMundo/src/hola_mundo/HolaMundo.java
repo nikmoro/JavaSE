@@ -32,7 +32,8 @@ public class HolaMundo {
 		
 		//Lower camel case para variables, métodos u objetos
 		int minValor = 1;
-		boolean pruebaGit = true; 
+		boolean pruebaGit = true;
+		
 		//---------------------------------------------------------------
 		
 		//Cast automático
@@ -56,5 +57,24 @@ public class HolaMundo {
 		
 		System.out.println(numByte);
 		System.out.println(codigoASCII);
+		
+		//----------------------------------------------------
+		
+		//Arreglos
+		
+		//Declarando el arreglos 1er forma
+		int[] arrayEntero;
+		//Declarando el arreglo 2a forma
+		double arrayDouble[];
+		
+		//Iniciar arreglo
+		double arreglo1D[] = new double[3]; 
+		int arreglo2D[][] = new int[2][3];  //Arreglo de 6 elementos
+		char arreglo3D[][][] = new char[3][3][2];  //Arreglo de 18 elementos
+		
+		char days[][] = { {'L','M','M'},
+						  {'J','V','S'} };
+		
+		char days3d[][][] = { { {'a','b','c'} }, { {'d','e','f'} } };
 	}
 }
