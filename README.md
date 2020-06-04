@@ -1,1 +1,1 @@
-JavaSE
+Ejercicios del curso de JavaSE
