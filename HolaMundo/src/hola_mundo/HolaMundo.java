@@ -107,5 +107,27 @@ public class HolaMundo {
 		System.out.println(a *= 4);
 		System.out.println(a /= 5);
 		System.out.println(a %= 6);
+		
+		
+		// Operadores de incremento y decremento (Prefijo y Postfijo)
+		int p = 5;
+		
+		/*  ++p
+		 *  1. Incrementa el valor p + 1
+		 *  2. Asigna el valor a p  */
+		System.out.println(++p);
+		
+		/*  p++
+		 *  Asigna el valor a p, p = p
+		 *  Incrementa el valor p + 1  */
+		System.out.println(p++);
+		System.out.println(p);
+		
+		// Operadores de equidad
+		int r = 24;
+		int w = 12;
+		
+		System.out.println(r == w);
+		System.out.println(r != w);
 	}
 }
