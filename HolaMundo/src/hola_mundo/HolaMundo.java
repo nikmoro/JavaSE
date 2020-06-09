@@ -5,7 +5,7 @@ public class HolaMundo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Hola Mundo \n");
+		System.out.println("Hola Mundo");
 		
 		//--------------------------------------------------
 		
@@ -55,7 +55,7 @@ public class HolaMundo {
 		byte numByte = (byte) numero;  // Casting de un dato mas grande que el rango
 									   // del tipo de dato destino, genera números "aleatorios".
 		
-		System.out.println(numByte);
+		System.out.println("\n" + numByte);  // + variable (Concatenación)
 		System.out.println(codigoASCII);
 		
 		//----------------------------------------------------
@@ -86,7 +86,7 @@ public class HolaMundo {
 		saludo[2] = 'l';
 		saludo[3] = 'a';
 		
-		System.out.println(saludo[0]);
+		System.out.println("\n" + saludo[0]);
 		System.out.println(saludo[1]);
 		System.out.println(saludo[2]);
 		System.out.println(saludo[3]);
@@ -94,7 +94,7 @@ public class HolaMundo {
 		//-------------------------------------------------
 		
 		// Operadores aritméticos
-		System.out.println(12+21);
+		System.out.println("\n"+ 12+21);
 		System.out.println(20-5);
 		System.out.println(12*15);
 		System.out.println(15/3);
@@ -102,7 +102,7 @@ public class HolaMundo {
 		
 		// Operadores de asignación
 		int a = 10;
-		System.out.println(a += 2);  // Es equivalente: a = a + 2
+		System.out.println("\n" + (a += 2));  // Es equivalente: a = a + 2; + (Asignaciones de variables)
 		System.out.println(a -= 3);
 		System.out.println(a *= 4);
 		System.out.println(a /= 5);
@@ -115,19 +115,33 @@ public class HolaMundo {
 		/*  ++p
 		 *  1. Incrementa el valor p + 1
 		 *  2. Asigna el valor a p  */
-		System.out.println(++p);
+		System.out.println("\n" + (++p));
 		
 		/*  p++
 		 *  Asigna el valor a p, p = p
 		 *  Incrementa el valor p + 1  */
-		System.out.println(p++);
-		System.out.println(p);
+		System.out.println(p++);  // Imprime el mismo valor 5
+		System.out.println(p);  // Imprime el valor aumentado en 1, 6
 		
-		// Operadores de equidad
+		// Operadores de equidad (Booleanos)
 		int r = 24;
 		int w = 12;
 		
-		System.out.println(r == w);
+		System.out.println("\n" + (r == w));
 		System.out.println(r != w);
+		
+		// Operadores relacionales
+		System.out.println("\nr > w -> " + (r > w));
+		System.out.println(r < w);
+		System.out.println(r >= w);
+		System.out.println(r <= w);
+		
+		// Operadores lógicos
+		boolean n = false;
+		boolean m = true;
+		
+		System.out.println("\nn && m -> " + (n && m));
+		System.out.println(n || m);
+		System.out.println(!n);
 	}
 }
