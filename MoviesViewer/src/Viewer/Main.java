@@ -16,7 +16,5 @@ public class Main {
 			System.out.println("4. Acción");
 			System.out.println("0. Salir");
 		} while (salir != 0);
-
 	}
-
 }
