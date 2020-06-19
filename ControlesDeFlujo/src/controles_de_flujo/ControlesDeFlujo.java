@@ -50,10 +50,10 @@ public class ControlesDeFlujo {
 
 		// For
 		System.out.println();
-		int[] nums = new int[5];
+		int[] nums = new int[5];  // Inicializar el arreglo
 
 		for (int c = 0; c < 5; c++) {
-			nums[c] = c+1;
+			nums[c] = c + 1;
 			System.out.println("Numeros["+c+"]: " + nums[c]);
 		}
 
@@ -61,6 +61,29 @@ public class ControlesDeFlujo {
 		System.out.println();
 		for (int j : nums) {
 			System.out.println(j);
+		}
+		
+		// Ciclos for anidados con arreglos 2D
+		System.out.println();
+		
+		// Arreglo de 3 filas x 5 columnas
+		int[][] numeros = { {1,2,3,4,5},
+							{6,7,8,9,10},
+							{11,12,13,14,15} };
+		
+		// Recorrer el arreglo
+		for (int f = 0; f < numeros.length; f++) {
+			for (int c = 0; c < numeros[0].length; c++) {  // Longitud de la fila[0], para saber la cantidad de columnas
+				System.out.println(numeros[f][c]);
+			}
+		}
+		
+		// Recorrer el arreglo
+		System.out.println();
+		for (int[] arregloInterno : numeros) {
+			for (int n : arregloInterno) {
+				System.out.println(n);
+			}
 		}
 	}
 }
