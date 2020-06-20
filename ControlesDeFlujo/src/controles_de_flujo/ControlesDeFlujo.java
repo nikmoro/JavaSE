@@ -81,14 +81,12 @@ public class ControlesDeFlujo {
 		
 		// Recorrer el arreglo
 		System.out.println();
-		for (int[] c : numeros) {  // "numeros" son las filas del arreglo
-			for (int n : c) {  // "c" recorrel la fila
+		for (int[] c : numeros) {  // "numeros" son las filas
+			for (int n : c) {  // "c" recorre la fila
 				System.out.println(n);
 			}
 		}
 		
-		/* numeros = 0
-		 * c = 0
-		 * n = 1 */
+		/* numeros = 0, c = 0, n = 1 */
 	}
 }
