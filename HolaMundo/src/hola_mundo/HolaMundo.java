@@ -67,9 +67,10 @@ public class HolaMundo {
 		double arrayDouble[];
 		
 		// Iniciarlo
+		// tipoDeDato[Dimensión] NombreDelArreglo = new tipoDeDato[N° de elementos]
 		double[] arreglo1D = new double[3]; 
-		int[][] arreglo2D = new int[2][3];  // Arreglo de 6 elementos
-		char[][][] arreglo3D = new char[3][3][2];  // Arreglo de 18 elementos
+		int[][] arreglo2D = new int[2][3];  // Arreglo 2D de 6 elementos
+		char[][][] arreglo3D = new char[3][3][2];  // Arreglo 3D de 18 elementos
 		
 		// Llenando el arreglo
 		char[][] days = { {'L','M','M'},
