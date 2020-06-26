@@ -1,20 +1,21 @@
 package Viewer;
 
-import java.util.Scanner;
-//import Clases.Pelicula;
+import java.util.Date;
+//import java.util.Scanner;
+import Clases.Pelicula;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		/* Pelicula pelicula = new Pelicula();  // Instanciando el objeto
-			pelicula.titulo = "Klaus";  // Accediendo a los atributos de la clase
-			pelicula.duracion = 140; */
+		Pelicula pelicula = new Pelicula("Klaus", "Animación", (short)2019); // Creando un objeto y aplicando un Cast
+		// pelicula.titulo = "Klaus";  // Accediendo a los atributos de la clase
+		pelicula.mostrarDatos();  // Accediendo a los métodos de la clase
 		
 		mostrarMenu();
 		
 	}
-
+	
 	public static void mostrarMenu() {
 		
 		int salir = 0;
@@ -27,6 +28,8 @@ public class Main {
 			System.out.println("3. Capítulos");
 			System.out.println("4. Libros");
 			System.out.println("5. Revistas");
+			System.out.println("6. Reporte");
+			System.out.println("7. Reporte de hoy");
 			System.out.println("0. Salir");
 			
 			// Leer resuesta del usuario
@@ -55,11 +58,17 @@ public class Main {
 				case 5:
 					mostrarRevistas();
 					break;
+				case 6:
+					hacerReporte();
+					break;
+				case 7:
+					//Date date = new Date()
+					hacerReporte(new Date());
+					break;
 				default:
 					System.out.println("\nNo haz seleccionado una opción válida");
 					break;
 			}
-			
 		} while(salir != 0);
 	}
 	public static void mostrarPeliculas() {
@@ -97,6 +106,10 @@ public class Main {
 			System.out.println("\n:. Revistas :.\n");
 		} while(exit != 0);
 	}
-	
-
+	public static void hacerReporte() {
+		
+	}
+	public static void hacerReporte(Date date) {
+		
+	}
 }
