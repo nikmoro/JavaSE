@@ -1,42 +1,32 @@
 package Clases;
 
-public class Pelicula {
+public class Pelicula extends Filme {
 	
-	// Atributos
 	private int id;
-	private String titulo;
-	private String genero;
-	private String creador;
-	private int duracion;
-	private short anio;
-	private boolean visto;
 	private int tiempoVisto;
 	
-	
-	// Mayús+Alt+S : Generar Constructror usando Fields 
-
-	// Constructor
-	public Pelicula(String titulo, String genero, short anio) {
-		super();
-		this.titulo = titulo;
-		this.genero = genero;
-		this.anio = anio;
+	public Pelicula(String titulo, String genero, String creador, int duracion, short Anio) { 
+		super(titulo, genero, creador, duracion);  
+		setAnio(Anio); // Método de la clase padre
 	}
 	
-	// Sobre carga del Constructor
-	public Pelicula(String titulo, String genero, String creador, int duracion, short anio) {
-		super();
-		this.titulo = titulo;
-		this.genero = genero;
-		this.creador = creador;
-		this.duracion = duracion;
-		this.anio = anio;
+	public int getId() {
+		return id;
 	}
 	
-	// Métodos
-	public void mostrarDatos() {
-		System.out.println("Título: " + titulo);
-		System.out.println("Género: " +  genero);
-		System.out.println("Año: " +  anio);
+	public int getTiempoVisto() {
+		return tiempoVisto;
+	}
+	public void setTiempoVisto(int tiempoVisto) {
+		this.tiempoVisto = tiempoVisto;
+	}	
+	
+	@Override  // Sobreescritura (Polimorfismo)
+	public String toString() {  // Reutlizando el método para mostrar los datos del objeto
+		return "Título: "     + getTitulo() +
+			   "\nGénero: "   + getGenero() + 
+			   "\nCreador: "  + getCreador() + 
+			   "\nDuración: " + getDuracion() +
+			   "\nAño: "      + getAnio();
 	}
 }

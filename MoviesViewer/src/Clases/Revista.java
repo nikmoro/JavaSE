@@ -2,20 +2,23 @@ package Clases;
 
 import java.util.Date;
 
-public class Revista {
+public class Revista extends Publicacion{
 
-	// Atributo
 	private int id;
-	private String titulo;
-	private Date fechaEdicion;
-	public String editorial;
-	public String[] autores; // Arreglo
 	
-	// Constructor
-	public Revista(String titulo, Date fechaEdicion, String editorial) {
-		super();
-		this.titulo = titulo;
-		this.fechaEdicion = fechaEdicion;
-		this.editorial = editorial;
+	public Revista(String titulo, Date fechaEdicion, String editorial, String[] autores) {
+		super(titulo, fechaEdicion, editorial, autores);
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	@Override
+	public String toString() {
+		return "Título: " 			   + getTitulo() +
+				"\nFecha de Edición: " + getFechaEdicion() +
+				"\nEditorial: " 	   + getEditorial() + 
+				"\nAutores: " 		   + getAutores();
 	}
 }

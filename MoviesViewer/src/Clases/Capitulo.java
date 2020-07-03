@@ -1,22 +1,34 @@
 package Clases;
 
-public class Capitulo {
+public class Capitulo extends Pelicula {
 	
-	// Atributos
 	private int id;
-	private String titulo;
-	private int duracion;
-	private short anio;
-	private boolean visto;
-	private int tiempoVisto;
-	//private int episodio;
-	private int numeroSesion;
+	private int temporada;
 	
-	// Constructor
-	public Capitulo(String titulo, int duracion, short anio) {
-		super();
-		this.titulo = titulo;
-		this.duracion = duracion;
-		this.anio = anio;
+	public Capitulo(String titulo, String genero, String creador, int duracion, short Anio, int temporada) {
+		super(titulo, genero, creador, duracion, Anio);
+		this.setTemporada(temporada);  //  Sobreecritura del constructor (Polimorfismo)
+	}
+	
+	@Override
+	public int getId() {  // Reutilizando el método desde la clase Pelicula
+		return this.id;
+	}
+	
+	public int getTemporada() {
+		return temporada;
+	}
+	public void setTemporada(int temporada) {
+		this.temporada = temporada;
+	}	
+
+	@Override
+	public String toString() {  // Reutlizando el método para mostrar los datos del objeto
+		return "Título : "      + getTitulo() + 
+				"\nGénero: "    + getGenero() +
+				"\nCreador: "   + getCreador() + 
+				"\nDiración: "  + getDuracion() + 
+				"\nAño: "       + getAnio() + 
+				"\nTemporada: " + getTemporada();
 	}
 }
