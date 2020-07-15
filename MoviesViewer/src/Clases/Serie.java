@@ -1,10 +1,12 @@
 package Clases;
 
+import java.util.ArrayList;
+
 public class Serie extends Filme { // Aplicando la herencia
 
 	private int id;
 	private int temporadas;
-	private Capitulo[] capitulos;  
+	private ArrayList<Capitulo> capitulos;  // ArrayList<NombreDeLaClase>
 
 	public Serie(String titulo, String genero, String creador, int duracion, int temporadas) {
 		super(titulo, genero, creador, duracion); // super : Referencia a los elementos de la clase padre
@@ -22,16 +24,17 @@ public class Serie extends Filme { // Aplicando la herencia
 		this.temporadas = temporadas;
 	}
 	
-	public Capitulo[] getCapitulos() {
+	public ArrayList<Capitulo> getCapitulos() {
 		return capitulos;
 	}
-	public void setCapitulos(Capitulo[] capitulos) {
+	public void setCapitulos(ArrayList<Capitulo> capitulos) {
 		this.capitulos = capitulos;
 	}
 
 	@Override  // Sobreescritura (Polimorfismo)
 	public String toString() {  // Reutlizando el método para mostrar los datos del objeto (Polimorfismo
-		return "Título: "       + getTitulo() +
+		return ":. SERIE .:"    +  
+			   "Título: "       + getTitulo() +
 			   "\nGénero: "     + getGenero() + 
 			   "\nCreador: "    + getCreador() + 
 			   "\nDuración: "   + getDuracion() +
