@@ -1,5 +1,6 @@
 package Clases;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Pelicula extends Filme implements IVisualizable {
@@ -47,5 +48,14 @@ public class Pelicula extends Filme implements IVisualizable {
 		else {
 			setTiempoVisto(0); // No se usan negativos
 		}
+	}
+	
+	public static ArrayList<Pelicula> hacerListaDePeliculas() {
+		ArrayList<Pelicula> peliculas = new ArrayList();
+		
+		for (int i = 1; i <= 5; i++) {
+			peliculas.add(new Pelicula("Película " + i, "Género " + i, "Creador " + i, 120 + i, (short)(2017 + i) ));
+		}
+		return peliculas;
 	}
 }
