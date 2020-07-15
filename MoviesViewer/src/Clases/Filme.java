@@ -57,8 +57,16 @@ public class Filme {
 		this.anio = anio;
 	}
 	
-	public boolean isVisto() {
-		return visto;
+	public String isVisto() {
+		String viewed = "";
+		
+		if (visto == true) {
+			viewed = "Sí";
+		}
+		else {
+			viewed = "No";
+		}
+		return viewed;
 	}
 	public void setVisto(boolean visto) {
 		this.visto = visto;
