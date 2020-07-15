@@ -14,9 +14,10 @@ public class Revista extends Publicacion{
 		return id;
 	}
 
-	@Override
+	@Override // Sobreescritura (Polimorfismo)
 	public String toString() {
-		return "Título: " 			   + getTitulo() +
+		return 	":. REVISTA .:"		   +
+				"Título: " 			   + getTitulo() +
 				"\nFecha de Edición: " + getFechaEdicion() +
 				"\nEditorial: " 	   + getEditorial() + 
 				"\nAutores: " 		   + getAutores();

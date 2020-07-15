@@ -22,9 +22,10 @@ public class Capitulo extends Pelicula {
 		this.temporada = temporada;
 	}	
 
-	@Override
+	@Override // Sobreescritura (Polimorfismo)
 	public String toString() {  // Reutlizando el método para mostrar los datos del objeto
-		return "Título : "      + getTitulo() + 
+		return  ":. CAPITULO .:"+
+				"Título : "     + getTitulo() + 
 				"\nGénero: "    + getGenero() +
 				"\nCreador: "   + getCreador() + 
 				"\nDiración: "  + getDuracion() + 
