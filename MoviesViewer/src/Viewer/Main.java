@@ -1,5 +1,6 @@
 package Viewer;
 
+import java.util.ArrayList;
 import java.util.Date;
 //import java.util.Scanner;
 import Clases.Pelicula;
@@ -8,12 +9,10 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Pelicula pelicula = new Pelicula("Klaus", "Animación", (short)2019); // Creando un objeto y aplicando un Cast
-		// pelicula.titulo = "Klaus";  // Accediendo a los atributos de la clase
-		pelicula.mostrarDatos();  // Accediendo a los métodos de la clase
+		/* Pelicula pelicula = new Pelicula("Klaus", "Animación", "", 120, (short)2020 ); // Creando un objeto y Cast
+		System.out.println(pelicula);  //toString() es opcional, ya lo hace directamente */
 		
 		mostrarMenu();
-		
 	}
 	
 	public static void mostrarMenu() {
@@ -21,7 +20,7 @@ public class Main {
 		int salir = 0;
 		
 		do {
-			System.out.println("\nBIENVENIDO A VIEWER \n");
+			System.out.println("BIENVENIDO A VIEWER \n");
 			System.out.println("Selecciona la opción deseada:");
 			System.out.println("1. Películas");
 			System.out.println("2. Series");
@@ -33,8 +32,8 @@ public class Main {
 			System.out.println("0. Salir");
 			
 			// Leer resuesta del usuario
-			//Scanner sc = new Scanner(System.in);
-			//int select = Integer.valueOf(sc.nextLine());
+			// Scanner sc = new Scanner(System.in);
+			// int select = Integer.valueOf(sc.nextLine());
 			
 			int select = 1;
 			
@@ -73,9 +72,17 @@ public class Main {
 	}
 	public static void mostrarPeliculas() {
 		int exit = 0;
+		ArrayList<Pelicula> peliculas = Pelicula.hacerListaDePeliculas();
 		
 		do {
 			System.out.println("\n:. Películas :.\n");
+			
+			for (int i = 0; i < peliculas.size(); i++) {
+				System.out.println(i+1 + ". " + peliculas.get(i).getTitulo() + " Visto: " + peliculas.get(i).isVisto());
+			}
+			
+			System.out.println("0. Regresar al Menú \n");
+			
 		} while(exit != 0);
 	}
 	public static void mostrarSeries() {
@@ -107,9 +114,7 @@ public class Main {
 		} while(exit != 0);
 	}
 	public static void hacerReporte() {
-		
 	}
 	public static void hacerReporte(Date date) {
-		
 	}
 }
