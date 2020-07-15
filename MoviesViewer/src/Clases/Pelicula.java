@@ -1,6 +1,8 @@
 package Clases;
 
-public class Pelicula extends Filme {
+import java.util.Date;
+
+public class Pelicula extends Filme implements IVisualizable {
 	
 	private int id;
 	private int tiempoVisto;
@@ -23,10 +25,27 @@ public class Pelicula extends Filme {
 	
 	@Override  // Sobreescritura (Polimorfismo)
 	public String toString() {  // Reutlizando el método para mostrar los datos del objeto
-		return "Título: "     + getTitulo() +
+		return ":. PELICULA .:" +
+			   "Título: "     + getTitulo() +
 			   "\nGénero: "   + getGenero() + 
 			   "\nCreador: "  + getCreador() + 
 			   "\nDuración: " + getDuracion() +
 			   "\nAño: "      + getAnio();
+	}
+	
+	// Métodos desde la interfaz
+	@Override
+	public Date comenzarAVer(Date dateI) {
+		return dateI;
+	}
+
+	@Override
+	public void terminarDeVer(Date dateI, Date dateF) {
+		if ( dateF.getSeconds() > dateI.getSeconds() ){
+			setTiempoVisto(dateF.getSeconds() - dateI.getSeconds());
+		}
+		else {
+			setTiempoVisto(0); // No se usan negativos
+		}
 	}
 }

@@ -2,7 +2,7 @@ package Clases;
 
 import java.util.Date;
 
-public class Libro extends Publicacion {
+public class Libro extends Publicacion implements IVisualizable {
 
 	private int id;	
 	private String isbn;  // El ISBN ​ es un identificador único para libros
@@ -39,12 +39,28 @@ public class Libro extends Publicacion {
 		this.tiempoLeido = tiempoLeido;
 	}
 
-	@Override
+	@Override // Sobreescritura (Polimorfismo)
 	public String toString() {
-		return "Título: " 			   + getTitulo() +
+		return  ":. LIBRO .:"          +
+				"Título: " 			   + getTitulo() +
 				"\nFecha de Edición: " + getFechaEdicion() +
 				"\nEditorial: " 	   + getEditorial() + 
 				"\nAutores: " 		   + getAutores() +
 				"\nISBN: " 			   + getIsbn();
+	}
+
+	@Override
+	public Date comenzarAVer(Date dateI) {
+		return dateI;
+	}
+
+	@Override
+	public void terminarDeVer(Date dateI, Date dateF) {
+		if ( dateF.getSeconds() > dateI.getSeconds() ) {
+			setTiempoLeido(dateF.getSeconds() - dateI.getSeconds());
+		}
+		else {
+			setTiempoLeido(0); // No se usan negativos
+		}
 	}
 }
