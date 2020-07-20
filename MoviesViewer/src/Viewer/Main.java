@@ -2,7 +2,7 @@ package Viewer;
 
 import java.util.ArrayList;
 import java.util.Date;
-//import java.util.Scanner;
+import java.util.Scanner;
 import Clases.Pelicula;
 
 public class Main {
@@ -31,15 +31,13 @@ public class Main {
 			System.out.println("7. Reporte de hoy");
 			System.out.println("0. Salir");
 			
-			// Leer resuesta del usuario
-			// Scanner sc = new Scanner(System.in);
-			// int select = Integer.valueOf(sc.nextLine());
-			
-			int select = 1;
-			
+			// Leer respuesta del usuario
+			Scanner sc = new Scanner(System.in);  // System.in: Imput Stream
+			int select = Integer.valueOf(sc.nextLine());  // Parseo; Validar que si sea un número
+						
 			switch (select) {
 				case 0:
-					System.out.println("\nUsted ha salido");
+					System.out.println("\nHas salido\n");
 					salir = 0;
 					break;
 				case 1:
@@ -71,7 +69,8 @@ public class Main {
 		} while(salir != 0);
 	}
 	public static void mostrarPeliculas() {
-		int exit = 0;
+		int exit = 1;
+		
 		ArrayList<Pelicula> peliculas = Pelicula.hacerListaDePeliculas();
 		
 		do {
@@ -82,6 +81,28 @@ public class Main {
 			}
 			
 			System.out.println("0. Regresar al Menú \n");
+			
+			// Leer respuesta del usuario
+			Scanner sc = new Scanner(System.in);
+			int select = Integer.valueOf(sc.nextLine());  // Casteo
+			
+			if (select == 0) {
+				mostrarMenu();
+			}
+			
+			Pelicula elegirPelicula = peliculas.get(select - 1);
+			elegirPelicula.setVisto(true);  // Seleccionarla como vista
+			Date dateI = elegirPelicula.comenzarAVer(new Date());  // Date() Toma la fecha em ese momento
+			
+			// Simulación
+			for (int i = 0; i < 100000; i++) {
+				System.out.println("(0 - 0)");
+			}
+			
+			// Terminar de verla
+			elegirPelicula.terminarDeVer(dateI, new Date());
+			System.out.println("\nViste: " + elegirPelicula);
+			System.out.println("Por: " + elegirPelicula.getTiempoVisto() + " milisegundos");
 			
 		} while(exit != 0);
 	}
