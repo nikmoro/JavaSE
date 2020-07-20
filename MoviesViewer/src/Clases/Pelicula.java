@@ -26,12 +26,12 @@ public class Pelicula extends Filme implements IVisualizable {
 	
 	@Override  // Sobreescritura (Polimorfismo)
 	public String toString() {  // Reutlizando el método para mostrar los datos del objeto
-		return ":. PELICULA .:" +
-			   "Título: "     + getTitulo() +
-			   "\nGénero: "   + getGenero() + 
-			   "\nCreador: "  + getCreador() + 
-			   "\nDuración: " + getDuracion() +
-			   "\nAño: "      + getAnio();
+		return "\n:. PELICULA .:" +
+			   "\nTítulo: "       + getTitulo() +
+			   "\nGénero: "       + getGenero() + 
+			   "\nCreador: "      + getCreador() + 
+			   "\nDuración: "     + getDuracion() +
+			   "\nAño: "          + getAnio();
 	}
 	
 	// Métodos desde la interfaz
@@ -42,8 +42,8 @@ public class Pelicula extends Filme implements IVisualizable {
 
 	@Override
 	public void terminarDeVer(Date dateI, Date dateF) {
-		if ( dateF.getSeconds() > dateI.getSeconds() ){
-			setTiempoVisto(dateF.getSeconds() - dateI.getSeconds());
+		if (dateF.getTime() > dateI.getTime()) {
+			setTiempoVisto((int)(dateF.getTime() - dateI.getTime()));  // Casteo de Long a int
 		}
 		else {
 			setTiempoVisto(0); // No se usan negativos
