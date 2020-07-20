@@ -41,8 +41,8 @@ public class Libro extends Publicacion implements IVisualizable {
 
 	@Override // Sobreescritura (Polimorfismo)
 	public String toString() {
-		return  ":. LIBRO .:"          +
-				"Título: " 			   + getTitulo() +
+		return  "\n:. LIBRO .:"        +
+				"\nTítulo: " 		   + getTitulo() +
 				"\nFecha de Edición: " + getFechaEdicion() +
 				"\nEditorial: " 	   + getEditorial() + 
 				"\nAutores: " 		   + getAutores() +

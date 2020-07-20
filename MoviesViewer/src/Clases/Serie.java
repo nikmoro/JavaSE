@@ -33,8 +33,8 @@ public class Serie extends Filme { // Aplicando la herencia
 
 	@Override  // Sobreescritura (Polimorfismo)
 	public String toString() {  // Reutlizando el método para mostrar los datos del objeto (Polimorfismo
-		return ":. SERIE .:"    +  
-			   "Título: "       + getTitulo() +
+		return "\n:. SERIE .:"  +  
+			   "\nTítulo: "     + getTitulo() +
 			   "\nGénero: "     + getGenero() + 
 			   "\nCreador: "    + getCreador() + 
 			   "\nDuración: "   + getDuracion() +
