@@ -1,5 +1,6 @@
 package Clases;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Libro extends Publicacion implements IVisualizable {
@@ -25,8 +26,16 @@ public class Libro extends Publicacion implements IVisualizable {
 		this.isbn = isbn;
 	}
 
-	public boolean getLeido() {  // isLeido
-		return leido;
+	public String isLeido() {
+		String Readed = "";
+		
+		if (leido == true) {
+			Readed = "Sí";
+		}
+		else {
+			Readed = "No";
+		}
+		return Readed;
 	}
 	public void setLeido(boolean leido) {
 		this.leido = leido;
@@ -39,8 +48,8 @@ public class Libro extends Publicacion implements IVisualizable {
 		this.tiempoLeido = tiempoLeido;
 	}
 
-	@Override // Sobreescritura (Polimorfismo)
-	public String toString() {
+	@Override
+	public String toString() {  // Reutlizando el método para mostrar los datos del objeto - Sobreescritura (Polimorfismo)
 		return  "\n:. LIBRO .:"        +
 				"\nTítulo: " 		   + getTitulo() +
 				"\nFecha de Edición: " + getFechaEdicion() +
@@ -49,18 +58,28 @@ public class Libro extends Publicacion implements IVisualizable {
 				"\nISBN: " 			   + getIsbn();
 	}
 
+	// Métodos desde la interfaz - IVisualizable
 	@Override
 	public Date comenzarAVer(Date dateI) {
 		return dateI;
 	}
-
 	@Override
 	public void terminarDeVer(Date dateI, Date dateF) {
-		if ( dateF.getSeconds() > dateI.getSeconds() ) {
-			setTiempoLeido(dateF.getSeconds() - dateI.getSeconds());
+		if ( dateF.getTime() > dateI.getTime() ) {
+			setTiempoLeido((int)(dateF.getTime() - dateI.getTime()));  // Casteo de Long a Int
 		}
 		else {
 			setTiempoLeido(0); // No se usan negativos
 		}
+	}
+	
+	public static ArrayList<Libro> hacerListaDeLibros() {
+		ArrayList<Libro> libros = new ArrayList();
+		
+		// Generar Libros
+		for (int i = 1; i < 5; i++) {
+			libros.add(new Libro("Título " + i , , "Editorial" + i, "Autor" +  i, "1627361" + i));
+		}
+		return libros;
 	}
 }
