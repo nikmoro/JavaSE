@@ -24,8 +24,8 @@ public class Pelicula extends Filme implements IVisualizable {
 		this.tiempoVisto = tiempoVisto;
 	}	
 	
-	@Override  // Sobreescritura (Polimorfismo)
-	public String toString() {  // Reutlizando el método para mostrar los datos del objeto
+	@Override
+	public String toString() {  // Reutilizando el método para mostrar los datos del objeto - Sobreescritura (Polimorfismo)
 		return "\n:. PELICULA .:" +
 			   "\nTítulo: "       + getTitulo() +
 			   "\nGénero: "       + getGenero() + 
@@ -34,12 +34,11 @@ public class Pelicula extends Filme implements IVisualizable {
 			   "\nAño: "          + getAnio();
 	}
 	
-	// Métodos desde la interfaz
+	// Métodos desde la interfaz - IVisualizable
 	@Override
 	public Date comenzarAVer(Date dateI) {
 		return dateI;
 	}
-
 	@Override
 	public void terminarDeVer(Date dateI, Date dateF) {
 		if (dateF.getTime() > dateI.getTime()) {

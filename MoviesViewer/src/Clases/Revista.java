@@ -14,8 +14,8 @@ public class Revista extends Publicacion{
 		return id;
 	}
 
-	@Override // Sobreescritura (Polimorfismo)
-	public String toString() {
+	@Override
+	public String toString() {  // Reutlizando el método para mostrar los datos del objeto - Sobreescritura (Polimorfismo)
 		return 	":. REVISTA .:"		   +
 				"Título: " 			   + getTitulo() +
 				"\nFecha de Edición: " + getFechaEdicion() +
