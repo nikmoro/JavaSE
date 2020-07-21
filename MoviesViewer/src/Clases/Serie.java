@@ -31,13 +31,22 @@ public class Serie extends Filme { // Aplicando la herencia
 		this.capitulos = capitulos;
 	}
 
-	@Override  // Sobreescritura (Polimorfismo)
-	public String toString() {  // Reutlizando el método para mostrar los datos del objeto (Polimorfismo
+	@Override
+	public String toString() {  // Reutlizando el método para mostrar los datos del objeto - Sobreescritura (Polimorfismo)
 		return "\n:. SERIE .:"  +  
 			   "\nTítulo: "     + getTitulo() +
 			   "\nGénero: "     + getGenero() + 
 			   "\nCreador: "    + getCreador() + 
 			   "\nDuración: "   + getDuracion() +
 			   "\nTemporadas: " + getTemporadas();
+	}
+	
+	public static ArrayList<Serie> hacerListaDeSeries() {
+		ArrayList<Serie> series = new ArrayList();
+		
+		for (int i = 0; i < 5; i++) {
+			series.add(new Serie("Título" + i, "Género" + i, "Creador" + i, 120, 3));
+		}
+		return series;
 	}
 }

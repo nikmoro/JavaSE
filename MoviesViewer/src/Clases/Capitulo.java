@@ -1,5 +1,7 @@
 package Clases;
 
+import java.util.ArrayList;
+
 public class Capitulo extends Pelicula {
 	
 	private int id;
@@ -7,7 +9,7 @@ public class Capitulo extends Pelicula {
 	
 	public Capitulo(String titulo, String genero, String creador, int duracion, short Anio, int temporada) {
 		super(titulo, genero, creador, duracion, Anio);
-		this.setTemporada(temporada);  //  Sobreecritura del constructor (Polimorfismo)
+		this.setTemporada(temporada);  //  Sobreescritura del constructor (Polimorfismo)
 	}
 	
 	@Override
@@ -22,8 +24,8 @@ public class Capitulo extends Pelicula {
 		this.temporada = temporada;
 	}	
 
-	@Override // Sobreescritura (Polimorfismo)
-	public String toString() {  // Reutlizando el método para mostrar los datos del objeto
+	@Override 
+	public String toString() {  // Reutlizando el método para mostrar los datos del objeto - Sobreescritura (Polimorfismo)
 		return  ":. CAPITULO .:"+
 				"Título : "     + getTitulo() + 
 				"\nGénero: "    + getGenero() +
@@ -31,5 +33,14 @@ public class Capitulo extends Pelicula {
 				"\nDiración: "  + getDuracion() + 
 				"\nAño: "       + getAnio() + 
 				"\nTemporada: " + getTemporada();
+	}
+	
+	public static ArrayList<Capitulo> hacerListDeCapitulos() {
+		ArrayList<Capitulo> capitulos = new ArrayList();
+		
+		for (int i = 0; i < 5; i++) {
+			capitulos.add(new Capitulo("Título" + i, "Género" + i, "Creador" + i, 120, (short)2020, 1));
+		}
+		return capitulos;
 	}
 }
