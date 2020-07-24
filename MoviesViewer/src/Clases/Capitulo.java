@@ -9,7 +9,7 @@ public class Capitulo extends Pelicula {
 	
 	public Capitulo(String titulo, String genero, String creador, int duracion, short Anio, int temporada) {
 		super(titulo, genero, creador, duracion, Anio);
-		this.setTemporada(temporada);  //  Sobreescritura del constructor (Polimorfismo)
+		this.setTemporada(temporada);  //  Sobreescritura del constructor y reutilización del método (Polimorfismo)
 	}
 	
 	@Override
@@ -25,7 +25,7 @@ public class Capitulo extends Pelicula {
 	}	
 
 	@Override 
-	public String toString() {  // Reutlizando el método para mostrar los datos del objeto - Sobreescritura (Polimorfismo)
+	public String toString() {  // Reutilizando el método para mostrar los datos del objeto - Sobreescritura (Polimorfismo)
 		return  ":. CAPITULO .:"+
 				"Título : "     + getTitulo() + 
 				"\nGénero: "    + getGenero() +
@@ -35,11 +35,11 @@ public class Capitulo extends Pelicula {
 				"\nTemporada: " + getTemporada();
 	}
 	
-	public static ArrayList<Capitulo> hacerListDeCapitulos() {
+	public static ArrayList<Capitulo> hacerListaDeCapitulos() {
 		ArrayList<Capitulo> capitulos = new ArrayList();
 		
-		for (int i = 0; i < 5; i++) {
-			capitulos.add(new Capitulo("Título" + i, "Género" + i, "Creador" + i, 120, (short)2020, 1));
+		for (int i = 1; i < 5; i++) {
+			capitulos.add(new Capitulo("Título " + i, "Género " + i, "Creador " + i, 120, (short)(2020 + i), + i));
 		}
 		return capitulos;
 	}

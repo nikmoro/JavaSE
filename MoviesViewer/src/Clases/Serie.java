@@ -8,9 +8,10 @@ public class Serie extends Filme { // Aplicando la herencia
 	private int temporadas;
 	private ArrayList<Capitulo> capitulos;  // ArrayList<NombreDeLaClase>
 
-	public Serie(String titulo, String genero, String creador, int duracion, int temporadas) {
+	public Serie(String titulo, String genero, String creador, int duracion, int temporadas, ArrayList<Capitulo> capitulos) {
 		super(titulo, genero, creador, duracion); // super : Referencia a los elementos de la clase padre
 		this.temporadas = temporadas;  			  // this : Referencia a los elementos de la misma clase
+		this.capitulos = capitulos;
 	}
 
 	public int getId() {
@@ -44,8 +45,8 @@ public class Serie extends Filme { // Aplicando la herencia
 	public static ArrayList<Serie> hacerListaDeSeries() {
 		ArrayList<Serie> series = new ArrayList();
 		
-		for (int i = 0; i < 5; i++) {
-			series.add(new Serie("Título" + i, "Género" + i, "Creador" + i, 120, 3));
+		for (int i = 1; i < 5; i++) {
+			series.add(new Serie("Título " + i, "Género " + i, "Creador " + i, 120, 3, Capitulo.hacerListaDeCapitulos()));
 		}
 		return series;
 	}
