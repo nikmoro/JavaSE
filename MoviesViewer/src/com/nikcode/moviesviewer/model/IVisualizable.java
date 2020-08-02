@@ -1,4 +1,4 @@
-package Clases;
+package com.nikcode.moviesviewer.model;
 
 import java.util.Date;
 
