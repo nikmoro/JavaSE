@@ -1,4 +1,4 @@
-package Clases;
+package com.nikcode.moviesviewer.model;
 
 public class Filme {
 	
@@ -57,6 +57,13 @@ public class Filme {
 		this.anio = anio;
 	}
 	
+	public boolean getIsVisto() {
+		return visto;
+	}
+	public void setVisto(boolean visto) {
+		this.visto = visto;
+	}
+	
 	public String isVisto() {
 		String viewed = "";
 		
@@ -67,8 +74,5 @@ public class Filme {
 			viewed = "No";
 		}
 		return viewed;
-	}
-	public void setVisto(boolean visto) {
-		this.visto = visto;
 	}
 }

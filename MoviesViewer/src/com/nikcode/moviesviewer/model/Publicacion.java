@@ -1,4 +1,4 @@
-package Clases;
+package com.nikcode.moviesviewer.model;
 
 import java.util.Date;
 
@@ -13,12 +13,11 @@ public class Publicacion {
 	//--- Métodos ---//
 	
 	// Constructor | [ Mayús+Alt+S : Generar Constructror usando Fields (Eclise IDE) ]
-	public Publicacion(String titulo, Date fechaEdicion, String editorial, String[] autores) {
+	public Publicacion(String titulo, Date fechaEdicion, String editorial) {
 		super();
 		this.titulo = titulo;
 		this.fechaEdicion = fechaEdicion;
 		this.editorial = editorial;
-		this.autores = autores;
 	}
 
 	// GET (Obtener) y SET (Establecer) | [ Mayús+Alt+S : Generar Getters and Setters (Eclise IDE) ]

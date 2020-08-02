@@ -1,4 +1,4 @@
-package Clases;
+package com.nikcode.moviesviewer.model;
 
 import java.util.ArrayList;
 
@@ -6,10 +6,12 @@ public class Capitulo extends Pelicula {
 	
 	private int id;
 	private int temporada;
+	private Serie serie; // Código de github
 	
-	public Capitulo(String titulo, String genero, String creador, int duracion, short Anio, int temporada) {
+	public Capitulo(String titulo, String genero, String creador, int duracion, short Anio, int temporada, Serie serie) {
 		super(titulo, genero, creador, duracion, Anio);
 		this.setTemporada(temporada);  //  Sobreescritura del constructor y reutilización del método (Polimorfismo)
+		this.setSerie(serie); // Código de github
 	}
 	
 	@Override
@@ -22,7 +24,15 @@ public class Capitulo extends Pelicula {
 	}
 	public void setTemporada(int temporada) {
 		this.temporada = temporada;
-	}	
+	}
+	
+	public Serie getSerie() {
+		return serie;
+	}
+
+	public void setSerie(Serie serie) {
+		this.serie = serie;
+	}
 
 	@Override 
 	public String toString() {  // Reutilizando el método para mostrar los datos del objeto - Sobreescritura (Polimorfismo)
@@ -35,11 +45,11 @@ public class Capitulo extends Pelicula {
 				"\nTemporada: " + getTemporada();
 	}
 	
-	public static ArrayList<Capitulo> hacerListaDeCapitulos() {
+	public static ArrayList<Capitulo> hacerListaDeCapitulos(Serie serie) {
 		ArrayList<Capitulo> capitulos = new ArrayList();
 		
 		for (int i = 1; i < 5; i++) {
-			capitulos.add(new Capitulo("Título " + i, "Género " + i, "Creador " + i, 120, (short)(2020 + i), + i));
+			capitulos.add(new Capitulo("Título " + i, "Género " + i, "Creador " + i, 120, (short)(2020 + i), + i, serie));
 		}
 		return capitulos;
 	}

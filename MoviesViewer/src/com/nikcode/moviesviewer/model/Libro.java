@@ -1,4 +1,4 @@
-package Clases;
+package com.nikcode.moviesviewer.model;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,9 +10,9 @@ public class Libro extends Publicacion implements IVisualizable {
 	private boolean leido;
 	private int tiempoLeido;
 
-	public Libro(String titulo, Date fechaEdicion, String editorial, String[] autores, String isbn) {
-		super(titulo, fechaEdicion, editorial, autores);
-		this.isbn = isbn;
+	public Libro(String titulo, Date fechaEdicion, String editorial, String[] autores) {
+		super(titulo, fechaEdicion, editorial);
+		setAutores(autores);
 	}
 	
 	public int getId() {
@@ -72,13 +72,18 @@ public class Libro extends Publicacion implements IVisualizable {
 			setTiempoLeido(0); // No se usan negativos
 		}
 	}
-	
+
 	public static ArrayList<Libro> hacerListaDeLibros() {
 		ArrayList<Libro> libros = new ArrayList();
+		String[] autores = new String[3];
+		
+		for (int i = 0; i < 3; i++) {
+			autores[i] = "Autor: " + 1;
+		}
 		
 		// Generar Libros
 		for (int i = 1; i < 5; i++) {
-			libros.add(new Libro("Título " + i , , "Editorial" + i, "Autor" +  i, "1627361" + i));
+			libros.add(new Libro("Título " + i , new Date(), "Editorial" + i, autores));
 		}
 		return libros;
 	}
